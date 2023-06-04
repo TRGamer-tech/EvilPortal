@@ -12,7 +12,7 @@ require_once('helper.php');
           function redirect() {
             setTimeout(function() {
               window.location = "/captiveportal/index.php";
-            }, 100);
+            }, 5000);
           }
         </script>
 
