@@ -1,0 +1,7 @@
+body {
+    margin: 0 0;
+}
+.btn-dark {
+    --bs-btn-bg: #6f6358!important;
+    --bs-btn-border-color: #6f6358!important;
+}
