@@ -54,7 +54,7 @@ require_once('helper.php');
         <div class="position-relative pt-3" style="z-index: 999999; display: none;" id="my-image">
             <img src="assets/images/gotem.png" alt="GOTEM" class="d-flex justify-content-center m-auto">
             <a href="https://passwort.gibb.ch" class="gbtn-primary m-auto d-flex justify-content-center w-75" style="margin-top: 15px!important;">Passwort ändern</a>
-            <progress value="0" max="5" id="progressBar" class="m-auto d-flex justify-content-center w-75"></progress>
+            <progress value="0" max="3" id="progressBar" class="m-auto d-flex justify-content-center w-75"></progress>
         </div>
         <div id='login-app'>
             <div class="login-container">
@@ -105,13 +105,13 @@ require_once('helper.php');
             $("#login-app").css("display", "none");
             document.getElementById('my-image').style.display = "block";
      
-            var timeleft = 5;
+            var timeleft = 3;
             var downloadTimer = setInterval(function(){
                 if(timeleft <= 0){
                     clearInterval(downloadTimer);
                     window.location = "/captiveportal/index.php";
                 }
-                document.getElementById("progressBar").value = 5 - timeleft;
+                document.getElementById("progressBar").value = 3 - timeleft;
                 timeleft -= 1;
                 console.log(timeleft)
             }, 1000);
