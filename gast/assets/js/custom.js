@@ -66,4 +66,5 @@
             event.preventDefault();
             doEmailStep()
         });
+
     });

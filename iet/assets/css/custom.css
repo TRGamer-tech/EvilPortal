@@ -12,17 +12,30 @@
         padding-top: 30px !important;
         padding-bottom: 40px !important;
     }
+
+    #my-image>img {
+        width: auto!important;
+    }
 }
 
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: hidden;
     font-family: 'Roboto', sans-serif;
     background-image: url("../images/illustration.png");
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#my-image {
+    height: 100%;
+    background-color: white;
+}
+
+#my-image>img {
+    width: 80vw;
 }
 
 .login-container {
